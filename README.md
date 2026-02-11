@@ -26,11 +26,11 @@ chezmoi init --apply --verbose https://github.com/jtaguchi/dotfiles.git
 
 #### Option 1: Pull latest and apply
 ```
-chezmoi update
+chezmoi -v update
 ```
 
 #### Option 2: Pull latest but apply separately
 ```
 chezmoi git pull -- --autostash --rebase && chezmoi diff
-chezmoi apply
-`
+chezmoi -v apply
+```
