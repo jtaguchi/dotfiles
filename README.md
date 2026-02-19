@@ -34,3 +34,7 @@ chezmoi -v update
 chezmoi git pull -- --autostash --rebase && chezmoi diff
 chezmoi -v apply
 ```
+
+### Add new or update existing files for tracking
+`chezmoi add [files]` or `chezmoi re-add`
+
