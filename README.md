@@ -38,3 +38,9 @@ chezmoi -v apply
 ### Add new or update existing files for tracking
 `chezmoi add [files]` or `chezmoi re-add`
 
+### Push updates to remote repository
+```
+chezmoi cd
+git commit -am "Message"
+git push
+```
