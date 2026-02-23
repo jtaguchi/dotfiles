@@ -1,4 +1,24 @@
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+HISTCONTROL=ignoreboth:erasedups
+HISTSIZE=10000
+HISTFILESIZE=20000
+HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S  "
+
+set -o vi
+
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
 export SSH_AUTH_SOCK=~/.bitwarden-ssh-agent.sock
+
+# Safety aliases to prompt before overwriting.
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias ln='ln -i'
+alias mkdir='mkdir -p'
