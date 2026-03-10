@@ -16,6 +16,11 @@ git config --global user.name "jtaguchi"
 git config --global user.email "12386296+jtaguchi@users.noreply.github.com"
 ```
 
+Other common tools:
+```
+nix profile add nixpkgs#ansible nixpkgs#tmux
+```
+
 ### Initial setup
 
 ```
