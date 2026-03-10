@@ -5,20 +5,30 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, nixpkgs }:
+  outputs = { self, nixpkgs, ... }:
     let
-      devPackages = with pkgs; [
-        # Core tools
-        tmux
-        git
-        git-credential-manager
-        curl
-        chezmoi
+      systems = [
+        "x86_64-linux"
+        "x86_64-darwin"
+        "aarch64-darwin"
+      ];
 
-        # Python
-        uv
-      ] ++ (with pkgs; pkgs.lib.optionals pkgs.stdenv.isLinux [
-        gcc
-        stdenv.cc.cc.lib
-      ]);
+      makeShell = system:
+        let
+          pkgs = import nixpkgs { inherit system; };
+        in pkgs.mkShell {
+          buildInputs = [
+            pkgs.git
+            pkgs.git-credential-manager
+            pkgs.tmux
+            pkgs.chezmoi
+            pkgs.curl
+            pkgs.uv
+          ];
+        };
+    in {
+      defaultPackage = builtins.listToAttrs (map (system:
+        { name = system; value = makeShell system; }
+      ) systems);
+    };
 }
