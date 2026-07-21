@@ -1,0 +1,14 @@
+{
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "dummydummy",
+    "ANTHROPIC_API_KEY": "dummydummy",
+    "ANTHROPIC_BASE_URL": "http://100.91.81.12:11434",
+    "ANTHROPIC_MODEL": "gemma4:26b-mlx-bf16",
+    "CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS": 1,
+    "DISABLE_TELEMETRY": 1,
+    "DISABLE_ERROR_REPORTING": 1,
+    "DISABLE_FEEDBACK_COMMAND": 1,
+    "CLAUDE_CODE_MAX_CONTEXT_TOKENS": 262144
+  },
+  "effortLevel": "high"
+}
