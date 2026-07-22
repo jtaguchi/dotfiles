@@ -44,6 +44,7 @@ roadmap.md:
 - MVP milestone
 - future milestones
 - backlog
+- ideas
 
 status.md:
 - current phase
@@ -56,7 +57,10 @@ decisions.md:
 4. Create or update CLAUDE.md:
 
 Include:
+- quick explanation for each of the memory files
+- instructions that only the memory files created here should be used and no new files should be created for project tracking
 - read memory files before work
+- roadmap may include ideas that need to be fleshed out before implementation
 - update status after work
 - record important decisions
 
